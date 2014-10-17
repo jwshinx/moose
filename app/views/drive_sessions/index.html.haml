@@ -1,0 +1,22 @@
+%h3 Drive Sessions
+%table
+  %thead
+    %tr
+      %th DS
+      %th Rigid
+      %th DU
+      %th Cap Ct
+      %th Updated
+      %th Start
+      %th End 
+  %tbody 
+    - @dss.each do |ds|
+      %tr
+        %td= ds.name
+        %td= ds.rig_id
+        %td= ds.du_id
+        %td= ds.capture_count
+        %td= ds.last_updated
+        %td= ds.start_time
+        %td= ds.end_time
+    
