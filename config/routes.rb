@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
+  namespace :api, defaults: { format: 'json' } do
+    namespace :v1 do
+      resources :drive_sessions, :only => [:index]
+    end
+  end
  
   resources :drive_sessions, :only => [:index]
+  get 'callback' => 'welcome#callback'
   root 'welcome#index'
 
   # Example of regular route:
