@@ -3,3 +3,16 @@
 = link_to 'Drive Sessions', drive_sessions_path 
 |
 = link_to 'Drive Sessions API', api_v1_drive_sessions_path 
+|
+
+- if current_user 
+  Signed in as 
+  = current_user.email 
+  = link_to 'Sign Out', signout_path, :method => :delete
+- else
+  = link_to 'Sign In Thru Tiber', '/auth/tiber' 
+
+- unless notice.blank?
+  %p.notice= notice
+- unless alert.blank?
+  %p.alert= alert

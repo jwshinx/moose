@@ -7,6 +7,9 @@ Rails.application.routes.draw do
  
   resources :drive_sessions, :only => [:index]
   get 'callback' => 'welcome#callback'
+  get '/auth/tiber/callback' => 'sessions#create'
+  get '/auth/failure' => 'welcome#failure'
+  delete 'signout' => 'sessions#destroy', as: :signout 
   root 'welcome#index'
 
   # Example of regular route:

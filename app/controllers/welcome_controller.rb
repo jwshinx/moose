@@ -3,6 +3,9 @@ class WelcomeController < ApplicationController
 
   def index
   end
+  def failure
+    @params = params
+  end
   def callback
   end
 end
