@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
  
   resources :drive_sessions, :only => [:index]
-  get 'callback' => 'welcome#callback'
+  resources :dots, :only => [:index]
   get '/auth/tiber/callback' => 'sessions#create'
   get '/auth/failure' => 'welcome#failure'
   delete 'signout' => 'sessions#destroy', as: :signout 

@@ -2,9 +2,9 @@ class SessionsController < ApplicationController
   def create
     user = User.from_omniauth(auth_hash)
     session[:user_id] = user.id
+    session[:access_token] = auth_hash["credentials"]["token"]
     #self.current_user = @user
-    redirect_to root_url, notice: "Signed in."
-    #session[:access_token] = auth["credentials"]["token"]
+    redirect_to dots_url, notice: "Signed in."
   end
 
   def destroy

@@ -1,0 +1,18 @@
+%h3 Dots 
+
+- unless @dots.nil?
+  %table
+    %thead
+      %tr
+        %th Rig 
+        %th Firstname
+        %th Lastname
+        %th Created
+    %tbody
+      - @dots.each do |d|
+        %tr
+          %td= d['rig_id'].to_s
+          %td= d['driver_firstname'].to_s
+          %td= d['driver_lastname'].to_s
+          %td= d['timestamp'].to_s
+  
